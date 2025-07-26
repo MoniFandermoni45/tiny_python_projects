@@ -7,7 +7,7 @@ import random
 import string
 from subprocess import getstatusoutput, getoutput
 
-prg = './howler.py'
+prg = 'python ./howler.py'
 
 
 # --------------------------------------------------
@@ -29,7 +29,7 @@ def out_flag():
 def test_exists():
     """exists"""
 
-    assert os.path.isfile(prg)
+    assert os.path.isfile('./howler.py')
 
 
 # --------------------------------------------------

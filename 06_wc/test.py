@@ -7,7 +7,7 @@ import re
 import string
 from subprocess import getstatusoutput
 
-prg = './wc.py'
+prg = 'python ./wc.py'
 empty = './inputs/empty.txt'
 one_line = './inputs/one.txt'
 two_lines = './inputs/two.txt'
@@ -19,7 +19,7 @@ sonnet = '../inputs/sonnet-29.txt'
 def test_exists():
     """exists"""
 
-    assert os.path.isfile(prg)
+    assert os.path.isfile('./wc.py')
 
 
 # --------------------------------------------------

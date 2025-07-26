@@ -4,14 +4,14 @@
 import os
 from subprocess import getstatusoutput
 
-prg = './jump.py'
+prg = 'python ./jump.py'
 
 
 # --------------------------------------------------
 def test_exists():
     """exists"""
 
-    assert os.path.isfile(prg)
+    assert os.path.isfile('./jump.py')
 
 
 # --------------------------------------------------

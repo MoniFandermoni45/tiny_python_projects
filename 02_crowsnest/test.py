@@ -4,7 +4,7 @@
 import os
 from subprocess import getstatusoutput, getoutput
 
-prg = './crowsnest.py'
+prg = 'python ./crowsnest.py'
 consonant_words = [
     'brigantine', 'clipper', 'dreadnought', 'frigate', 'galleon', 'haddock',
     'junk', 'ketch', 'longboat', 'mullet', 'narwhal', 'porpoise', 'quay',
@@ -19,7 +19,7 @@ template = 'Ahoy, Captain, {} {} off the larboard bow!'
 def test_exists():
     """exists"""
 
-    assert os.path.isfile(prg)
+    assert os.path.isfile('crowsnest.py')
 
 
 # --------------------------------------------------
@@ -66,3 +66,10 @@ def test_vowel_upper():
     for word in vowel_words:
         out = getoutput(f'{prg} {word.upper()}')
         assert out.strip() == template.format('an', word.upper())
+
+def test_starboard_flag():
+    """Tests the starboard flag"""
+    for word in vowel_words:
+        for flag in ['-r', '--starboard']:
+            out = getoutput(f'{prg} {word} {flag}')
+            assert out.strip() == template.replace('larboard', 'starboard').format('an', word)

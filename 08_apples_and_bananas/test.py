@@ -5,7 +5,7 @@ import re
 import os
 from subprocess import getstatusoutput, getoutput
 
-prg = './apples.py'
+prg = 'python ./apples.py'
 fox = '../inputs/fox.txt'
 
 
@@ -13,7 +13,7 @@ fox = '../inputs/fox.txt'
 def test_exists():
     """exists"""
 
-    assert os.path.isfile(prg)
+    assert os.path.isfile('./apples.py')
 
 
 # --------------------------------------------------

@@ -4,14 +4,14 @@
 import os
 from subprocess import getoutput
 
-prg = './picnic.py'
+prg = 'python ./picnic.py'
 
 
 # --------------------------------------------------
 def test_exists():
     """exists"""
 
-    assert os.path.isfile(prg)
+    assert os.path.isfile('./picnic.py')
 
 
 # --------------------------------------------------
@@ -66,3 +66,12 @@ def test_more_than_two_sorted():
     out = getoutput(f'{prg} {arg} --sorted')
     expected = ('You are bringing apples, bananas, cherries, and dates.')
     assert out.strip() == expected
+
+def test_other_seperator():
+    """test other separator, determined by user"""
+
+    arg = 'cherries tomatoes "tomato soup"'
+    for separator in [';', ':', ']']:
+        out = getoutput(f'{prg} {arg} --separator {separator}')
+        expected = f'You are bringing cherries{separator} tomatoes{separator} and tomato soup.'
+        assert out.strip() == expected

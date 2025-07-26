@@ -7,7 +7,7 @@ import random
 import string
 from subprocess import getstatusoutput
 
-prg = './gashlycrumb.py'
+prg = 'python ./gashlycrumb.py'
 
 
 # --------------------------------------------------
@@ -21,7 +21,7 @@ def file_flag():
 def test_exists():
     """exists"""
 
-    assert os.path.isfile(prg)
+    assert os.path.isfile('./gashlycrumb.py')
 
 
 # --------------------------------------------------
