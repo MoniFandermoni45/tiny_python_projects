@@ -73,3 +73,9 @@ def test_file_with_vowel():
 
     out = getoutput(f'{prg} --vowel o {fox}')
     assert out.strip() == 'Tho qoock brown fox jomps ovor tho lozy dog.'
+
+def test_collapsing_vowels():
+    '''test repeating vowels collapse to one vowel'''
+
+    out = getoutput(f'{prg} --vowel e --collapse "aHoooy"')
+    assert out.strip() == 'eHey'

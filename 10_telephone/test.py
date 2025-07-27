@@ -7,7 +7,7 @@ import random
 import re
 import string
 
-prg = "./telephone.py"
+prg = "python ./telephone.py"
 fox = '../inputs/fox.txt'
 now = '../inputs/now.txt'
 
@@ -16,7 +16,7 @@ now = '../inputs/now.txt'
 def test_exists():
     """exists"""
 
-    assert os.path.isfile(prg)
+    assert os.path.isfile('./telephone.py')
 
 
 # --------------------------------------------------

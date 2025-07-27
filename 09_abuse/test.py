@@ -7,14 +7,14 @@ import re
 import string
 from subprocess import getstatusoutput, getoutput
 
-prg = './abuse.py'
+prg = 'python ./abuse.py'
 
 
 # --------------------------------------------------
 def test_exists():
     """exists"""
 
-    assert os.path.isfile(prg)
+    assert os.path.isfile('./abuse.py')
 
 
 # --------------------------------------------------
